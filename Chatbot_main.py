@@ -1,6 +1,6 @@
 #create python class for chatbot
 def Chatbot():
-    def __init__(question, answer):
+    def __init__(question, answer, self=None):
         self.question = question
         self.answer = answer
     def get_question(self):
