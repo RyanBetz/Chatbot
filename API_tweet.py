@@ -27,8 +27,8 @@ def main():
     api = tweepy.API(auth)
 
     # Executing Each Call
-    call_1 = get_tweets("Apple",300,api)
-    call_2 = get_tweets("Iphone 14",300,api)
+    call_1 = get_tweets("Iphone",3000,api)
+    call_2 = get_tweets("Apple",3000,api)
     # only include tweets that are in english
     call_1 = [tweet for tweet in call_1 if tweet.lang == 'en']
     call_2 = [tweet for tweet in call_2 if tweet.lang == 'en']
