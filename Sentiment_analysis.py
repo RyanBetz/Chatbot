@@ -18,14 +18,15 @@ df.to_csv('Twitter_info_3.csv')
 #count the number of positive, negative, and neutral tweets
 print(df['Sentiment'].value_counts())
 
-#create bag of words model
-cv = CountVectorizer()
-#transform the vectorizer using pandas dataframe
-X = cv.fit_transform(df['Tweet'])
-#convert the vectorizer to a dataframe
-df = pd.DataFrame(X.toarray(), columns=cv.get_feature_names())
-#save the dataframe
-df.to_csv('Twitter_info_3.csv')
+#use n-grams to find the most common words
+vect = CountVectorizer(ngram_range=(1,2), max_features=100)
+vect.fit(df['Tweet'])
+vect_transform = vect.transform(df['Tweet'])
+vect_df = pd.DataFrame(vect_transform.toarray(), columns=vect.get_feature_names_out())
+print(vect_df)
+#use spacy to fin
+
+
 
 
 
