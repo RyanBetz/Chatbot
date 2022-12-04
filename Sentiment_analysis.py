@@ -1,6 +1,9 @@
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 import spacy as sp
+from nltk import word_tokenize
+import nltk
+nltk.download('punkt')
 
 #create csv with onl the column 3 in twitter_info.csv
 df = pd.read_csv('Twitter_info.csv', usecols=[2])
@@ -19,12 +22,15 @@ df.to_csv('Twitter_info_3.csv')
 print(df['Sentiment'].value_counts())
 
 #use n-grams to find the most common words
-vect = CountVectorizer(ngram_range=(1,2), max_features=100)
+vect = CountVectorizer(ngram_range=(1,2), max_features=10)
 vect.fit(df['Tweet'])
 vect_transform = vect.transform(df['Tweet'])
 vect_df = pd.DataFrame(vect_transform.toarray(), columns=vect.get_feature_names_out())
 print(vect_df)
-#use spacy to fin
+#tokenize the tweets using word tokenize
+tokens_tweets = [word_tokenize(tweet) for tweet in df['Tweet']]
+
+
 
 
 
