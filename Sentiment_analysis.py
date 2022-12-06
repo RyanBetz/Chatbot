@@ -3,7 +3,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 import spacy as sp
 from nltk import word_tokenize
 import nltk
-nltk.download('punkt')
 
 #create csv with onl the column 3 in twitter_info.csv
 df = pd.read_csv('Twitter_info.csv', usecols=[2])
@@ -29,6 +28,16 @@ vect_df = pd.DataFrame(vect_transform.toarray(), columns=vect.get_feature_names_
 print(vect_df)
 #tokenize the tweets using word tokenize
 tokens_tweets = [word_tokenize(tweet) for tweet in df['Tweet']]
+#iterate through each tokenized tweet and create new feature for the length of each tweets
+for index, tweet in enumerate(tokens_tweets):
+    df.loc[index, 'Length'] = len(tweet)
+#save the csv
+df.to_csv('Twitter_info_3.csv')
+#find the average length of the tweets
+print(df['Length'].mean())
+
+
+
 
 
 
