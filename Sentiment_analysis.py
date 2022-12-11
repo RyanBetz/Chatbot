@@ -35,8 +35,6 @@ print(df['Sentiment'].value_counts())
 #tokenize the tweets using word tokenize
 tokens_tweets = [word_tokenize(tweet) for tweet in df['Tweet']]
 #iterate through each tokenized tweet and create new feature for the length of each tweets
-for index, tweet in enumerate(tokens_tweets):
-    df.loc[index, 'Length'] = len(tweet)
 #lemmatize the tweets
 nlp = sp.load('en_core_web_sm')
 lemmatized_tweets = []
@@ -46,18 +44,8 @@ for tweet in df['Tweet']:
 for index, tweet in enumerate(lemmatized_tweets):
     lemmatized_tweets[index] = [word for word in tweet if word not in stop_words and not word.isnumeric()]
 #perform sentiment analysis on the lemmatized tweets
-sentiment_analyzer = LogisticRegression()
-sentiment_analyzer.fit(df['Length'].values.reshape(-1,1), df['Sentiment'])
-#split the data into training and testing data
-X_train, X_test, y_train, y_test = train_test_split(df['Length'].values.reshape(-1,1), df['Sentiment'], test_size=0.2)
-#train the model
-sentiment_analyzer.fit(X_train, y_train)
-#test the model
-print(sentiment_analyzer.score(X_test, y_test))
-#predict the sentiment of a tweet
-print(sentiment_analyzer.predict([[10]]))
-#predict the probability of a tweet being positive, negative, or neutral
-print(sentiment_analyzer.predict_proba([[10]]))
+#vectorize the training and testing data
+
 
 #save the csv
 df.to_csv('Twitter_info_3.csv')
