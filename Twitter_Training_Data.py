@@ -12,7 +12,5 @@ vect = CountVectorizer(ngram_range=(1,2), max_features=10)
 vect.fit(see['tweet'])
 vect_transform = vect.transform(see['tweet'])
 vect_df = pd.DataFrame(vect_transform.toarray(), columns=vect.get_feature_names_out())
-#tokenize the tweets
-tokens_tweets = [word_tokenize(tweet) for tweet in see['tweet']]
 #save the csv
-see.to_csv('Twitter_info_4.csv')
+vect_df.to_csv('Twitter_info_4.csv')
