@@ -4,7 +4,7 @@ import pandas as pd
 
 def get_tweets(keywords,limit,api):
     tweets = tweepy.Cursor(api.search_tweets,
-                           q=keywordds,
+                           q=keywords,
                            count=100,
                            tweet_mode='extended').items(limit)
     return tweets
