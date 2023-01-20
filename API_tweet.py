@@ -32,8 +32,6 @@ def main():
     # only include tweets that are in english
     call_1 = [tweet for tweet in call_1 if tweet.lang == 'en']
     call_2 = [tweet for tweet in call_2 if tweet.lang == 'en']
-
-    # dataframe creation
     columns = ['User', 'Tweet']
     data = []
     data_2 = []
