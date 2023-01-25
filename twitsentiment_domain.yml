@@ -26,31 +26,17 @@ entities:
 templates:
     utter_greeting:
         - 'Hello! I am a Chatbot which captures and analyzes Twitter sentiments for various companies. What company do you want to examine?'
-    utter_give_company:
-        - 'You chose _company_.'
-    utter_list_subjects:
-        - 'Here are some subjects related to _company_ that people have been tweeting about: _subjects_'
-    utter_display_tweets:
-        - 'Here is what people have been tweeting about on the subject of _company_ _subject_.'
-    utter_save:
-        - 'Your search results and analysis will be saved for later.'
-    utter_display_sentiments:
-        - 'Here are the results of your sentiment analysis.'
-    utter_display_data_viz:
-        - 'Here is a visualization of keywords from those tweets.'
-    utter_tell_options:
-        - 'Here are some of the things you can do currently: _options_'
+    utter_ask_save:
+        - 'Do you want to save your data for later?'
+    utter_ask_next:
+        - 'What do you want to do next?'
 
 actions:
     - utter_greeting
-    - utter_give_company
-    - utter_list_subjects
-    - utter_display_tweets
     - utter_save
-    - utter_display_sentiments
-    - utter_display_data_viz
-    - utter_tell_options
+    - utter_ask_next
     - get_tweets
+    - get_company
     - get_subjects
     - get_sentiments
     - get_data_viz
