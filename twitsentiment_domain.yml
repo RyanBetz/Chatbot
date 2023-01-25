@@ -1,0 +1,57 @@
+slots:
+    company:
+        type: text
+    tweets: 
+        type: list
+    subjects:
+        type: list
+    query:
+        type: text
+    save_search:
+        type: bool
+
+intents:
+	- greeting 
+	- select_company
+	- revise_query
+	- save_results
+	- sentiment
+	- data_viz
+
+entities:
+	- company
+	- query
+	- visualization
+
+templates:
+    utter_greeting:
+        - 'Hello! I am a Chatbot which captures and analyzes Twitter sentiments for various companies. What company do you want to examine?'
+    utter_give_company:
+        - 'You chose _company_.'
+    utter_list_subjects:
+        - 'Here are some subjects related to _company_ that people have been tweeting about: _subjects_'
+    utter_display_tweets:
+        - 'Here is what people have been tweeting about on the subject of _company_ _subject_.'
+    utter_save:
+        - 'Your search results and analysis will be saved for later.'
+    utter_display_sentiments:
+        - 'Here are the results of your sentiment analysis.'
+    utter_display_data_viz:
+        - 'Here is a visualization of keywords from those tweets.'
+    utter_tell_options:
+        - 'Here are some of the things you can do currently: _options_'
+
+actions:
+    - utter_greeting
+    - utter_give_company
+    - utter_list_subjects
+    - utter_display_tweets
+    - utter_save
+    - utter_display_sentiments
+    - utter_display_data_viz
+    - utter_tell_options
+    - get_tweets
+    - get_subjects
+    - get_sentiments
+    - get_data_viz
+    - save_results

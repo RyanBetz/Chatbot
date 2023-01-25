@@ -1,0 +1,268 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "greeting",
+        "text": "Hello"
+      },
+      {
+        "intent": "greeting",
+        "text": "What's up?"
+      },
+      {
+        "intent": "greeting",
+        "text": "hi"
+      },
+      {
+        "intent": "greeting",
+        "text": "Greetings"
+      },
+      {
+        "intent": "greeting",
+        "text": "Good morning"
+      },
+      {
+        "intent": "greeting",
+        "text": "good afternoon"
+      },
+      {
+        "intent": "greeting",
+        "text": "good evening"
+      },
+      {
+        "intent": "select_company",
+        "entities": [
+          {
+            "start": 18,
+            "end": 23,
+            "value": "apple",
+            "entity": "company"
+          }
+        ],
+        "text": "i want to look at apple"
+      },
+      {
+        "intent": "select_company",
+        "text": "i want to look at a company"
+      },
+      {
+        "intent": "select_company",
+        "entities": [
+          {
+            "start": 16,
+            "end": 25,
+            "value": "microsoft",
+            "entity": "company"
+          }
+        ],
+        "text": "what is up with microsoft?"
+      },
+      {
+        "intent": "select_company",
+        "text": "let me look at a new company"
+      },
+      {
+        "intent": "select_company",
+        "entities": [
+          {
+            "start": 18,
+            "end": 25,
+            "value": "twitter",
+            "entity": "company"
+          }
+        ],
+        "text": "i want to look at twitter"
+      },
+      {
+        "intent": "revise_query",
+        "entities": [
+          {
+            "start": 31,
+            "end": 37,
+            "value": "iphone",
+            "entity": "query"
+          }
+        ],
+        "text": "i want to look at tweets about iphone"
+      },
+      {
+        "intent": "revise_query",
+        "entities": [
+          {
+            "start": 11,
+            "end": 17,
+            "value": "mac os",
+            "entity": "query"
+          }
+        ],
+        "text": "search for mac os"
+      },
+      {
+        "intent": "revise_query",
+        "entities": [
+          {
+            "start": 27,
+            "end": 38,
+            "value": "whole foods",
+            "entity": "query"
+          }
+        ],
+        "text": "what do people think about whole foods"
+      },
+      {
+        "intent": "revise_query",
+        "entities": [
+          {
+            "start": 43,
+            "end": 68,
+            "value": "the quarterly performance",
+            "entity": "query"
+          }
+        ],
+        "text": "i want to see what people are saying about the quarterly performance"
+      },
+      {
+        "intent": "revise_query",
+        "entities": [
+          {
+            "start": 21,
+            "end": 27,
+            "value": "vscode",
+            "entity": "query"
+          }
+        ],
+        "text": "examine tweets about vscode"
+      },
+      {
+        "intent": "revise_query",
+        "entities": [
+          {
+            "start": 25,
+            "end": 37,
+            "value": "iphone x pro",
+            "entity": "query"
+          }
+        ],
+        "text": "what do people say about iphone x pro"
+      },
+      {
+        "intent": "save_results",
+        "text": "save the results"
+      },
+      {
+        "intent": "save_results",
+        "text": "yes, save "
+      },
+      {
+        "intent": "save_results",
+        "text": "save my results "
+      },
+      {
+        "intent": "save_results",
+        "text": "save these tweets"
+      },
+      {
+        "intent": "save_results",
+        "text": "store these search results for me"
+      },
+      {
+        "intent": "save_results",
+        "text": "save these results "
+      },
+      {
+        "intent": "save_results",
+        "text": "save my data, please"
+      },
+      {
+        "intent": "save_results",
+        "text": "can you save what you showed me?"
+      },
+      {
+        "intent": "sentiment",
+        "text": "How many are good or bad?"
+      },
+      {
+        "intent": "sentiment",
+        "text": "Are people happy about it?"
+      },
+      {
+        "intent": "sentiment",
+        "text": "do people like the product?"
+      },
+      {
+        "intent": "sentiment",
+        "text": "do a sentiment analysis on this"
+      },
+      {
+        "intent": "sentiment",
+        "text": "what is the overall sentiment?"
+      },
+      {
+        "intent": "sentiment",
+        "text": "what is the overall opinion on it?"
+      },
+      {
+        "intent": "sentiment",
+        "text": "do people like the service?"
+      },
+      {
+        "intent": "sentiment",
+        "text": "are most people enjoying the product?"
+      },
+      {
+        "intent": "data_viz",
+        "text": "do some data visualization, please"
+      },
+      {
+        "intent": "data_viz",
+        "entities": [
+          {
+            "start": 10,
+            "end": 14,
+            "value": "graph",
+            "entity": "visualization"
+          }
+        ],
+        "text": "Show me a graph"
+      },
+      {
+        "intent": "data_viz",
+        "entities": [
+          {
+            "start": 10,
+            "end": 22,
+            "value": "visualization",
+            "entity": "visualization"
+          }
+        ],
+        "text": "Produce a visualization"
+      },
+      {
+        "intent": "data_viz",
+        "entities": [
+          {
+            "start": 10,
+            "end": 22,
+            "value": "visualization",
+            "entity": "visualization"
+          }
+        ],
+        "text": "produce a visualization of those tweets"
+      },
+      {
+        "intent": "data_viz",
+        "entities": [
+          {
+            "start": 10,
+            "end": 20,
+            "value": "word cloud",
+            "entity": "visualization"
+          }
+        ],
+        "text": "show me a word cloud for these tweets"
+      }
+    ],
+    "regex_features": [],
+    "entity_synonyms": []
+  }
+}

@@ -1,0 +1,2 @@
+model_checkpoint_path: "C:\\Users\\douwi\\chatbot\\./models/nlu\\default\\twitsentimentbot\\intent_classifier_tensorflow_embedding.ckpt"
+all_model_checkpoint_paths: "C:\\Users\\douwi\\chatbot\\./models/nlu\\default\\twitsentimentbot\\intent_classifier_tensorflow_embedding.ckpt"

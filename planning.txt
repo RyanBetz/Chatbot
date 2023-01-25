@@ -1,0 +1,61 @@
+1. What tasks do I want my chatbot to do?
+- Search a database of tweets for a subject
+- Conduct a sentiment analysis on the tweets
+- generate a visualization
+
+2. User will express things in various ways. Bot should be able to understand different utterances/variances
+
+3. Write logic to keep user tied to the flow that *you* hav chosen for the bot, after it has recognized the user's intent.
+
+- Decision trees 
+- A graph or model of decisiosn and their possible consequences, including 
+    - chance event outcomes
+    - resource costs
+    - utility
+
+Bot Intent: refers to the user's intention 
+
+Entities: metadata about the Intent:
+- ex: booking a ticket is the intent; the movie in question could be the entity, or the flight, the concert, etc.
+
+Utterances: forms of the same question
+- Optimum 10 utterances per intent; min. 5
+
+Training the bot: build a model that will categorize utterances based on intents, entities, and predefined utterances. 
+
+COnfidence score: What intent does an utterance belong to? >> how confident is the model in categorizing correctly?
+
+List of Intents, entities:
+1. Greeting Intent
+2. Selecting Company Intent
+3. Querying Subject Intent
+4. Revise Query Intent
+5. Save Results Intent
+
+Advanced Functionality:
+6. Sentiment Analysis Intent
+7. Data Visualization Intent
+
+Rasa concepts
+Action class: 
+    name method: returns the name of the Action
+    - referred to in the domain file as "custom method name"
+    run method takes params:
+    - dispatcher: sends messages. dispatcher.utter_message()
+    - tracker: state tracker..
+        - tracker.get_slot(slot_name) (see below)
+        - tracker.latest_message.text -- most recent user message
+    - domain: bot's domain.
+    Run method returns a list of Events instances.
+
+Slots: 
+- storage space for user-given info or prefetched info.
+- text, boolean, categorical, float, list, featurized
+
+Templates: for utterances
+
+ “The Domain defines the universe in which your
+bot operates. It specifies the intents, entities, slots, 
+and actions your bot should know
+about. Optionally, it can also include templates for the
+things your bot can say.”
