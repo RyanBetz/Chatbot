@@ -1,20 +1,20 @@
-import pandas as pd
-from sklearn.feature_extraction.text import CountVectorizer
-import spacy as sp
-from nltk import word_tokenize
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
-
+import csv
 import nltk
+from nltk.sentiment import SentimentIntensityAnalyzer
 
-#nltk.download('punkt')
+# Initialize SentimentIntensityAnalyzer
+sia = SentimentIntensityAnalyzer()
 
-# read twitter_info.csv
-df = pd.read_csv('Twitter_info_2.csv')
-# tokenize the twitter_info.csv tweets
-#use a model to run sentiment analysis
-tokenizer = AutoTokenizer.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
-model = AutoModelForSequenceClassification.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
-# save the csv with the predictions
-df.to_csv('Twitter_info_2.csv')
+# Open the input file in read mode
+with open('Twitter_info_2.csv', 'r') as file:
+    reader = csv.DictReader(file)
+    fieldnames = reader.fieldnames + ['Sentiment']
+    # Open the output file in write mode
+    with open('Twitter_info_2.csv', 'w', newline='') as outfile:
+        writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in reader:
+            tweet = row['Tweet']
+            sentiment = sia.polarity_scores(tweet)
+            row['Sentiment'] = sentiment
+            writer.writerow(row)
