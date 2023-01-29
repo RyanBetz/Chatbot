@@ -1,7 +1,7 @@
 import csv
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
-
+import pandas as pd
 # Initialize SentimentIntensityAnalyzer
 sia = SentimentIntensityAnalyzer()
 
@@ -23,3 +23,9 @@ with open('Twitter_info_2.csv', 'r') as file:
             else:
                 row['Sentiment'] = 'neutral'
             writer.writerow(row)
+#generate summary statistics of the sentiment
+#delete the last column
+df = pd.read_csv('Twitter_info_2.csv')
+df = df.drop(columns=['Sentiment'])
+#save the file
+df.to_csv('Twitter_info_2.csv')
